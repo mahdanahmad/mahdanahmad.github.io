@@ -1,0 +1,3 @@
+function initTask1() {
+
+}
