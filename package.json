@@ -1,0 +1,21 @@
+{
+  "name": "plj-written",
+  "version": "0.0.1",
+  "description": "PLJ written test",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "light-server -s . -p 3000",
+	"sass": "cd stylesheets && sass --watch scss:css --style compressed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mahdanahmad/plj-written.git"
+  },
+  "author": "mahdan.ahmad@yahoo.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mahdanahmad/plj-written/issues"
+  },
+  "homepage": "https://github.com/mahdanahmad/plj-written#readme"
+}
