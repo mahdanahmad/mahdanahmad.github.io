@@ -1,9 +1,6 @@
 @import "statics";
 @import "mixins";
 
-@import "viz/side";
-@import "viz/polygons";
-
 a { cursor: pointer; text-decoration: none; color: black; }
 ul { list-style-type: none; margin: 0px; padding: 0px; }
 img { max-width: 100%; height: auto; }
@@ -25,44 +22,52 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button { -webkit-app
 .nopadding { @include nopadding(); }
 .hidden { display: none!important; }
 html, body, body > div#root {
-	width: 100%; height: 100%; margin: 0px; padding: 0px; overflow: hidden; font-family: $def-font-stack; font-size: 10px;
+	width: 100%; height: 100%; margin: 0px; padding: 0px; overflow: hidden; font-family: $def-font-stack;
 	-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; color: black;
 }
 div#root {
     background: $default-back; position: relative;
-	#task1-wrapper, #task2-wrapper {
-		width: 100%; height: 100%; position: relative;
-		// position: absolute; top: 0; left: 0;
-		i {
-			position: absolute; left: 48vw; font-size: 4vw; z-index: 1000; color: white; cursor: pointer;
-			&.fa-chevron-up { top: 0px; }
-			&.fa-chevron-down { bottom: 0px; }
-		}
-	}
-	#task1-wrapper {
-		#map-wrapper {
-			width: 100%; height: 100%;
-			.leaflet-popup-close-button { display: none; }
-		}
-	}
-	#task2-wrapper {
-		// display: none;
-		& > div { display: inline-block; height: 100%; float: left; }
-		#side-bar {
-			width: $side-width;
-		}
-		#mein-bar {
-			width: calc(100% - #{$side-width}); position: relative;
-			#detil-tooltips {
-				position: absolute; background: rgba(black, .75); padding: 7.5px 10px; border-radius: 3px; color: white;
-				&::after { top: 50%; border: solid transparent; content: " "; height: 0; width: 0; position: absolute; pointer-events: none; border-width: 5px; margin-top: -5px; }
-				&.left::after { right: 100%; border-right-color: rgba(black, .75); }
-				&.right::after { left: 100%; border-left-color: rgba(black, .75); }
+	#wrapper {
+		$head-size: 180px;
+
+		max-width: 700px; margin: auto;
+		#head-wrap {
+			#head {
+				width: $head-size; height: $head-size;
+				border: 0px solid $headframe-clr; border-radius: 50%; overflow: hidden;
+				background-image: url('../../public/head.jpg'); background-size: cover;
 			}
 		}
-		svg {
-			text { fill: white; }
-			.grid-wrapper { stroke: lightgray; stroke-dasharray: 1.5; stroke-width: .25; }
+		#trashtalk {
+			#floor {
+				letter-spacing: 0px;
+				a:hover { font-weight: 700; text-decoration: underline; }
+			}
+		}
+		#misc {
+			width: 100%; display: flex; justify-content: center; margin-top: 25px; flex-wrap: wrap;
+			a { text-align: center; }
+		}
+
+		@media screen and (max-width: 680px) {
+			margin-top: 20vh; font-size: 12px;
+			#head-wrap { width: 100%; #head { margin: auto; } }
+			#trashtalk {
+				padding: 15px; text-align: center;
+				#ceil { font-size: 28px; letter-spacing: -1px; }
+			}
+			#misc a { width: 100%; margin-bottom: 12px; }
+		}
+
+		@media screen and (min-width: 680px) {
+			display: flex; flex-wrap: wrap;
+			margin-top: 25vh; align-items: center; font-size: 15px;
+			#head-wrap { margin-right: 20px; }
+			#trashtalk {
+				flex: 2;
+				#ceil { font-size: 35px; letter-spacing: -1px; }
+			}
+			#misc a { margin: 0px 20px; }
 		}
 	}
 }

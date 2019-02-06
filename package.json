@@ -1,7 +1,7 @@
 {
-  "name": "plj-written",
+  "name": "mahdanahmad.github.io",
   "version": "0.0.1",
-  "description": "PLJ written test",
+  "description": "homepage",
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,12 +10,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mahdanahmad/plj-written.git"
+    "url": "git+https://github.com/mahdanahmad/mahdanahmad.github.io.git"
   },
   "author": "mahdan.ahmad@yahoo.com",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mahdanahmad/plj-written/issues"
+    "url": "https://github.com/mahdanahmad/mahdanahmad.github.io/issues"
   },
-  "homepage": "https://github.com/mahdanahmad/plj-written#readme"
+  "homepage": "https://github.com/mahdanahmad/mahdanahmad.github.io#readme"
 }
